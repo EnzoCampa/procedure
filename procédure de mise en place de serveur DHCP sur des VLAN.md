@@ -6,7 +6,7 @@
 ```bash=
 /interface vlan add interface=@int name=@name vlan-id=@id
 ```
-### ++ex :++
+### ex :
 ```bash=
 interface vlan add interface=br-lan vlan-id=102 name=vlan_102
 ```
@@ -18,7 +18,7 @@ interface vlan add interface=br-lan vlan-id=102 name=vlan_102
 ip address add interface=@int_vlan address=@ip_vlan
 ```
 
-### ++ex :++ 
+### ex :
 ```bash=
 ip address add interface=vlan_102 address=160.0.0.1/8
 ```
@@ -28,7 +28,7 @@ ip address add interface=vlan_102 address=160.0.0.1/8
 ```bash=
 ip pool add name=pool_name ranges=@IP_start-@IP_end
 ```
-### ++ex :++ 
+### ex :
 ```bash=
 ip pool add name=pool_vlan_102 ranges=160.0.0.2-160.0.0.254
 ```
@@ -39,7 +39,7 @@ ip pool add name=pool_vlan_102 ranges=160.0.0.2-160.0.0.254
 ```bash=
 /ip dhcp-server add address-pool=@pool_name interface=@vlan_name
 ```
-### ++ex :++ 
+### ex :
 ```bash=
 ip dhcp-server add address-pool=pool_vlan_102 interface=vlan_102 
 ```
@@ -50,7 +50,7 @@ ip dhcp-server add address-pool=pool_vlan_102 interface=vlan_102
 ```bash=
 ip dhcp-server network add address=@ip_vlan/8 dns-server=8.8.8.8,8.8.4.4 gateway=@ip_gateway
 ```
-### ++ex :++ 
+### ex :
 ```bash=
 ip dhcp-server network add  address=160.0.0.0/8 dns-server=8.8.8.8,8.8.4.4 gateway=160.0.0.1 
 ```
@@ -62,7 +62,7 @@ ip dhcp-server network add  address=160.0.0.0/8 dns-server=8.8.8.8,8.8.4.4 gatew
  ip dhcp-server enable @num
 ```
 
-### ++ex :++ 
+### ex :
 ```bash=
 ip dhcp-server enable 2
 ```
